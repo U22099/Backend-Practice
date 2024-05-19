@@ -1,6 +1,7 @@
+const base_url = 'http://localhost:8090'
 const getall = async () => {
     try {
-        const response = await fetch('http://localhost:8090/employee');
+        const response = await fetch(`${base_url}/employee`);
         const data = await response.json();
         return data
     } catch (error) {
@@ -9,7 +10,7 @@ const getall = async () => {
 const get1 = async () => {
     
     try {
-        const response = await fetch('http://localhost:8090/employee/1');
+        const response = await fetch(`${base_url}/employee/1`);
         const data = await response.json();
         return data
     } catch (error) {
@@ -18,7 +19,7 @@ const get1 = async () => {
 }
 const get2 = async () => {
     try {
-        const response = await fetch('http://localhost:8090/employee/2');
+        const response = await fetch(`${base_url}/employee/2`);
         const data = await response.json();
         return data
     } catch (error) {

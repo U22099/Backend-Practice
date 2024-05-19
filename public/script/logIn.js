@@ -1,6 +1,7 @@
+const base_url = 'http://localhost:8090'
 async function logIn(input, pwd) {
     try {
-        const response = await fetch('http://localhost:8090/auth', {
+        const response = await fetch(`${base_url}/auth`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
@@ -13,7 +14,7 @@ async function logIn(input, pwd) {
 }
 async function openHome(data){  
     try {
-        const response = await fetch('http://localhost:8090/home', {
+        const response = await fetch(`${base_url}/home`, {
         credentials: 'include'
         });
         window.location.href = response.url

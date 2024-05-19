@@ -1,3 +1,4 @@
+const base_url = 'http://localhost:8090'
 document.getElementById('submit').addEventListener('click', async ()=>{
     const message = await register()
     console.log(message.message)
@@ -9,7 +10,7 @@ async function register(){
     const pwd = document.getElementById('pwd').value;
 
     try {
-        const response = await fetch('http://localhost:8090/register', {
+        const response = await fetch(`${base_url}/register`, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         credentials: 'include',
@@ -29,7 +30,7 @@ async function register(){
 
 export async function logIn(input, pwd) {
     try {
-        const response = await fetch('http://localhost:8090/auth', {
+        const response = await fetch(`${base_url}/auth`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
@@ -42,7 +43,7 @@ export async function logIn(input, pwd) {
 }
 export async function openHome(){
     try {
-        const response = await fetch('http://localhost:8090/home', {
+        const response = await fetch(`${base_url}/home`, {
         credentials: 'include'
         });
         window.location.href = response.url
