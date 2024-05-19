@@ -2,7 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "logsEvent.js",
+  "engines": {
+      "node" : "18.x"
+  },
   "scripts": {
     "dev": "nodemon server",
     "start": "node server.js"
