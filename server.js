@@ -4,13 +4,9 @@ const path = require('path');
 const verifyJWT = require('./middleware/verifyJWT');
 const credentials = require('./middleware/credentials');
 const corsOption = {
-    origin: (origin, callback) => {
-        if(origin === 'http://localhost:8090' || !origin){
-            callback(null, true);
-        }else{
-            callback(new Error('Not Allowed By CORS'));
-        }
-    },
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  headers: ['Content-Type', 'Authorization'],
     optionsSuccessfulStatus: 200
 }
 const cors = require('cors');
